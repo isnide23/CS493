@@ -1,0 +1,14 @@
+{
+  "name": "project1",
+  "version": "1.0.0",
+  "description": "CS494 Project1 Express App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ian Snyder",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
