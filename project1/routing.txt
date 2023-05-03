@@ -1,0 +1,7 @@
+/businesses
+
+/reviews
+
+/photos
+
+/users
