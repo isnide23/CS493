@@ -1,10 +1,10 @@
 /businesses
-    *add a businesses
-    *modify a businesses
-    *deletea a businesses
-    *get a list of businesses
-    *get detailed info on a single businesses
-
+    *get a list of businesses                 -> get /businesses
+    *add a businesses                         -> post /businesses
+    *get detailed info on a single businesses -> get /businesses/id
+    *modify a businesses                      -> put /businesses/id
+    *delete a a businesses                    -> delete /businesses/id
+    
 /reviews
     *add a review of existing businesses
     *modify a review

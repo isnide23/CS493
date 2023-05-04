@@ -5,6 +5,7 @@ const port = process.env.PORT || 8000;
 app.set('view engine', 'ejs')
 
 app.use(express.static('public'))
+app.use(express.json());
 
 const businessesRouter = require('./routes/businesses')
 const photosRouter = require('./routes/photos')
