@@ -1,12 +1,29 @@
 const express = require('express')
 const router = express.Router()
 
-router.get("/", (req, res) => {
-    res.send("Photo List")
+// Route to create a new photo.
+router.post('/', function (req, res, next) {
+
 })
 
-router.get("/new", (req, res) => {
-    res.send("New Photo Form")
+
+// Route to fetch info about a specific photo.
+router.get('/:photoID', function (req, res, next) {
+
 })
+
+
+// Route to update a photo.
+router.put('/:photoID', function (req, res, next) {
+
+})
+
+
+// Route to delete a photo.
+router.delete('/:photoID', function (req, res, next) {
+
+})
+
+
 
 module.exports = router
