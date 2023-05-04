@@ -1,12 +1,27 @@
 const express = require('express')
 const router = express.Router()
 
-router.get("/", (req, res) => {
-    res.send("Reviews List")
-})
+// Route to create a new review.
+router.post('/', function (req, res, next) {
 
-router.get("/new", (req, res) => {
-    res.send("New Review Form")
+})
+  
+ 
+// Route to fetch info about a specific review.
+router.get('/:reviewID', function (req, res, next) {
+
+})
+  
+
+// Route to update a review.
+router.put('/:reviewID', function (req, res, next) {
+
+})
+  
+
+// Route to delete a review.
+router.delete('/:reviewID', function (req, res, next) {
+
 })
 
 module.exports = router

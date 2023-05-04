@@ -1,7 +1,18 @@
 /businesses
+    *add a businesses
+    *modify a businesses
+    *deletea a businesses
+    *get a list of businesses
+    *get detailed info on a single businesses
 
 /reviews
+    *add a review of existing businesses
+    *modify a review
+    *delete a review
 
 /photos
+    *add photo of a businesses
+    *delete a photo
+    *modify a photo
 
-/users
+/users (not used for project1)
