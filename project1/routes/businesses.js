@@ -53,14 +53,13 @@ router.get('/', function (req, res) {
 // Route to create a new business.
 router.post('/', function (req, res, next) {
     if (req.body && req.body.name) {
-        businesses.push(req.body);
-        var id = lodgings.length - 1;
-        res.status(201).json({
+        var id = businesses.length;
+        var new_business = {
             id: id,
-            links: {
-                business: '/businesses/' + id
-            }
-        });
+            name: req.body.name
+        }
+        businesses.push(new_business);
+        res.status(201).json(new_business);
     } else {
         res.status(400).json({
             err: "Request needs a JSON body with a name field"
@@ -70,7 +69,7 @@ router.post('/', function (req, res, next) {
 
 // Route to fetch info about a specific business.
 router.get('/:businessid', function (req, res, next) {
-    var businessID = parseInt(req.params.businessID);
+    var businessID = parseInt(req.params.businessid);
     if (businesses[businessID]) {
         res.status(200).json(businesses[businessID]);
     } else {
@@ -80,9 +79,12 @@ router.get('/:businessid', function (req, res, next) {
 
 // Route to replace data for a business.
 router.put('/:businessid', function (req, res, next) {
-    var businessID = parseInt(req.params.businessID);
-    if (businesses[businessID]) {
-        businesses[businessID] = req.body;
+    var businessID = parseInt(req.params.businessid);
+    if (businesses[businessID] && req.body && req.body.name) {
+        businesses[businessID] = {
+            id: businessID,
+            name: req.body.name
+        }
         res.status(200).json({
             links: {
                 businesses: '/businesses/' + businessID
@@ -97,7 +99,7 @@ router.put('/:businessid', function (req, res, next) {
 router.delete('/:businessid', function (req, res, next) {
     const businessid = parseInt(req.params.businessid);
     if (businesses[businessid]) {
-        businesses[businessid] = null;
+        businesses.pop(businessid);
         res.status(204).end();
     } else {
         next();
