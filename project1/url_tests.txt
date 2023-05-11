@@ -1,0 +1,77 @@
+businesses urls:
+
+    get:
+    curl --location 'http://localhost:8000/businesses'
+
+    post:
+    curl --location 'http://localhost:8000/businesses' \
+    --header 'Content-Type: application/json' \
+    --data '{
+        "name": "New Business Name"
+    }'
+
+    get by id:
+    curl --location 'http://localhost:8000/businesses/2'
+
+    put:
+    curl --location --request PUT 'http://localhost:8000/businesses/2' \
+    --header 'Content-Type: application/json' \
+    --data '{
+        "name" : "Modified Businesses Name"
+    }'
+
+    delete:
+    curl --location --request DELETE 'http://localhost:8000/businesses/2'
+
+reviews urls:
+    get:
+    curl --location 'http://localhost:8000/reviews'
+
+    post:
+    curl --location 'http://localhost:8000/reviews' \
+    --header 'Content-Type: application/json' \
+    --data '{
+        "dollarRating": 7,
+        "starRating": 7
+    }'
+
+    get by id:
+    curl --location 'http://localhost:8000/reviews/2'
+
+    put:
+    curl --location --request PUT 'http://localhost:8000/reviews/2' \
+    --header 'Content-Type: application/json' \
+    --data '{
+        "dollarRating": 7,
+        "starRating" : 7
+    }'
+
+    delete:
+    curl --location --request DELETE 'http://localhost:8000/reviews/2'
+
+reviews urls:
+    get:
+    curl --location 'http://localhost:8000/photos'
+
+    post:
+    curl --location 'http://localhost:8000/photos' \
+    --header 'Content-Type: application/json' \
+    --data '{
+        "businessid": 1,
+        "caption": "Dummy food."
+    }'
+    get by id:
+    curl --location 'http://localhost:8000/photos/2'
+
+    put:
+    curl --location --request PUT 'http://localhost:8000/photos/2' \
+    --header 'Content-Type: application/json' \
+    --data '{
+        "caption" : "New Caption"
+    }'
+
+    delete:
+    curl --location --request DELETE 'http://localhost:8000/photos/2'
+
+
+

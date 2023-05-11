@@ -49,6 +49,9 @@ router.get('/', function (req, res) {
     });
 
 })
+/*
+curl --location 'http://localhost:8000/businesses'
+*/
 
 // Route to create a new business.
 router.post('/', function (req, res, next) {
@@ -66,6 +69,13 @@ router.post('/', function (req, res, next) {
         });
     }
 })
+/*
+curl --location 'http://localhost:8000/businesses' \
+--header 'Content-Type: application/json' \
+--data '{
+      "name": "New Business Name"
+}'
+*/
 
 // Route to fetch info about a specific business.
 router.get('/:businessid', function (req, res, next) {
@@ -76,6 +86,9 @@ router.get('/:businessid', function (req, res, next) {
         next();
     }
 })
+/*
+curl --location 'http://localhost:8000/businesses/2'
+*/
 
 // Route to replace data for a business.
 router.put('/:businessid', function (req, res, next) {
@@ -95,6 +108,14 @@ router.put('/:businessid', function (req, res, next) {
     }
 })
 
+/*
+curl --location --request PUT 'http://localhost:8000/businesses/2' \
+--header 'Content-Type: application/json' \
+--data '{
+    "name" : "Modified Businesses Name"
+}'
+*/
+
 // Route to delete a business.
 router.delete('/:businessid', function (req, res, next) {
     const businessid = parseInt(req.params.businessid);
@@ -105,6 +126,8 @@ router.delete('/:businessid', function (req, res, next) {
         next();
   }
 })
-
+/*
+curl --location --request DELETE 'http://localhost:8000/businesses/2'
+*/
 
 module.exports = router
